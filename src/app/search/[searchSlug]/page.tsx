@@ -1,6 +1,5 @@
 'use client'
 import { gql, useQuery } from '@apollo/client';
-// import Aside from "@/components/Aside";
 import { Header } from "@/components/Header";
 import { CardPost } from "@/components/CardPost";
 import { Loading } from '@/components/Loading';
@@ -8,9 +7,11 @@ import { format } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 import Link from 'next/link';
 
-export default function Home() {
-  
-  const GET_ALL_POSTS = gql`
+export default function Search({params}: {params: {searchSlug: string}}){
+
+    console.log(params?.searchSlug)
+
+    const GET_ALL_POSTS = gql`
     query GetAllPosts {
       posts(orderBy: createdAt_DESC) {
         id
@@ -54,19 +55,22 @@ export default function Home() {
       <main className="w-full max-w-[1120px] flex flex-row mx-auto pb-12 min-h-[100vh] gap-10">
         <div className="max-w-[800px]">
           {
-            data?.posts.map((post, index)=>{
-              return(
-                <CardPost
-                  key={index}
-                  title={post.title}
-                  subtitle={post.subtitle}
-                  slug={post.slug}
-                  author={post.author.name}
-                  createdAt={format(new Date(post.createdAt), "dd 'de' MMM 'de' yyyy", {locale: ptBR})}
-                  urlImage={post.coverImage.url}
-                />
-              )
-            })
+            data?.posts
+                .filter((post) => post.title.toLowerCase().includes(params.searchSlug?.toLowerCase()))
+                .slice(0, 5)
+                .map((post, index) => {
+                    return(
+                        <CardPost
+                            key={index}
+                            title={post.title}
+                            subtitle={post.subtitle}
+                            slug={post.slug}
+                            author={post.author.name}
+                            createdAt={format(new Date(post.createdAt), "dd 'de' MMM 'de' yyyy", {locale: ptBR})}
+                            urlImage={post.coverImage.url}
+                        />
+                    )
+                })
           }
         </div>
         <div className="max-w-[320px]">
