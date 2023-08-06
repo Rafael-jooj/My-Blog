@@ -2,6 +2,9 @@
 
 ![Badge Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
 
+## Link do projeto
+https://blog-tech-seven.vercel.app/
+
 ## Descrição do Projeto
 <p>Esse projeto se trata da criação de um Blog criado em Nextjs 13 consumindo uma api graphql (HyGraph) onde realizo a postagem dos artigos que podem ser acessados diretamente pela api.</p>
 <p>Dentre algumas das tecnologias utilizadas neste projeto temos o Nextjs 13, graphql, Apollo Client e gql</p>
