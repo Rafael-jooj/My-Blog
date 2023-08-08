@@ -34,7 +34,7 @@ export default function RootLayout({children,}: {
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>CodeTech</title>
-    </head>
+      </head>
       <body className={poppins.className} suppressHydrationWarning={true}>
         <ApolloClientProvider>
           {children}

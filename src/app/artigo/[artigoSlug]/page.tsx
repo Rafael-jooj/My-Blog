@@ -56,7 +56,7 @@ export default function Postagem({params}: {params: {artigoSlug: string}}){
     return(
         <>
             <Header/>
-            <main className="w-full max-w-[1120px] flex mx-auto pb-12 min-h-[100vh] gap-10">
+            <main className="w-full max-w-[1120px] flex mx-auto pb-12 min-h-[100vh] gap-10 p-5">
                 <div className="max-w-[1120px]">
                         <Post
                             title={data?.post.title!}

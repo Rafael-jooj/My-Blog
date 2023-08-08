@@ -15,9 +15,9 @@ export function CardPost({title, subtitle, slug, author, createdAt, urlImage}: C
         <div className="bg-white p-10 mt-10 rounded-lg">
             <div className="flex flex-col mb-5">
                 <Link href={`/artigo/${slug}`}>
-                    <h1 className="text-2xl mb-5">{title}</h1>
+                    <h1 className="text-xl lg:text-2xl mb-5">{title}</h1>
                 </Link>
-                <div className="flex flex-row gap-5">
+                <div className="flex flex-col lg:flex-row gap-2 lg:gap-5">
                     <p>{author}</p>
                     <p>{createdAt}</p>
                 </div>

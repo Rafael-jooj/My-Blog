@@ -17,10 +17,10 @@ interface AllProps{
 
 export function Post({title, subtitle, author, createdAt, urlImage, content}: AllProps){
     return(
-        <div className="bg-white p-10 mt-10 rounded-lg">
+        <div className="bg-white p-5 lg:p-10 mt-10 rounded-lg">
             <div className="flex flex-col mb-5">
-                <h1 className="text-2xl mb-5">{title}</h1>
-                <div className="flex flex-row gap-5">
+                <h1 className="text-xl lg:text-2xl mb-5">{title}</h1>
+                <div className="flex flex-col lg:flex-row gap-2 lg:gap-5">
                     <p>{author}</p>
                     <p>{createdAt}</p>
                 </div>

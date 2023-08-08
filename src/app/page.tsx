@@ -51,7 +51,7 @@ export default function Home() {
   return (
     <>
       <Header/>
-      <main className="w-full max-w-[1120px] flex flex-row mx-auto pb-12 min-h-[100vh] gap-10">
+      <main className="w-full max-w-[1120px] flex flex-col-reverse lg:flex-row mx-auto pb-12 min-h-[100vh] gap-10 p-5">
         <div className="max-w-[800px]">
           {
             data?.posts.map((post, index)=>{
@@ -69,7 +69,7 @@ export default function Home() {
             })
           }
         </div>
-        <div className="max-w-[320px]">
+        <div className="max-w-[320px] flex self-center lg:self-start">
           <div className="bg-white p-5 rounded-lg mt-10">
               <h2 className="text-2xl mb-5">Posts recentes</h2>
               <div className="w-20 h-1 bg-blue-400 border-r-[40px] border-orange-500"></div>

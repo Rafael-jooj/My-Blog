@@ -16,12 +16,12 @@ export function Header(){
 
     return(
         <header className='py-10 pl-[10%] pr-[10%] bg-white'>
-            <div className='w-full max-w-[1120px] flex mx-auto flex-row justify-between'>
+            <div className='w-full max-w-[1120px] flex mx-auto flex-col md:flex-row gap-5 justify-between'>
                 <Link href={'/'}>
                     <Logo/>
                 </Link>
-                <div className='w-90 border rounded-lg border-black'>
-                    <form method='get' action={`search/${keyword}`}>
+                <div className='w-45 border rounded-lg border-black'>
+                    <form method='get' action={`search/${keyword}`} className='flex flex-row'>
                         <input className='p-2 w-80 rounded-lg outline-0' type="text" placeholder='Pesquisar' value={keyword} onChange={handleChangeKeyword}/>
                         <button className='w-10'>🔍</button>
                     </form>
